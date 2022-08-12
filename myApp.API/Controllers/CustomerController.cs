@@ -25,8 +25,8 @@ namespace myApp.API.Controllers
         public async Task<IActionResult> GetAll()
         {
             var customers = await _service.GetAllAsync();
-            var customersDto = _mapper.Map<CustomerDto>(customers.ToListAsync());
-            return CreateActionResult(CustomResponseDto<List<CustomerDto>>.Success(204/*, customersDto*/));
+            var customersDto = _mapper.Map<CustomerDto>(customers.ToList());
+            return CreateActionResult(CustomResponseDto<List<CustomerDto>>.Success(204));
         }
 
     }

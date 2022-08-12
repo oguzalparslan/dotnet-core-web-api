@@ -23,7 +23,7 @@ namespace myApp.Service.Service
             return entity;
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<List<T>> GetAllAsync()
         {
             return await genericRepository.GetAllAsync().ToListAsync();
         }
