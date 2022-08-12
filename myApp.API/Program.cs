@@ -7,6 +7,7 @@ using myApp.Repository.UnitOfWork;
 using myApp.Service.Mapping;
 using myApp.Service.Service;
 using AutoMapper;
+using myApp.Repository.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -17,8 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<AppDbContext>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(IGenericRepository<>));
-//builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
@@ -31,7 +31,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 
-var app = builder.Build();
+var app = builder.Build(); //Throw System.ArgumentException
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
