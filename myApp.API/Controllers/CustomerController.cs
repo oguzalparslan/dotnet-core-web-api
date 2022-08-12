@@ -7,8 +7,6 @@ using myApp.Core.Services;
 
 namespace myApp.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class CustomerController : CustomBaseController
     {
         private readonly IMapper _mapper;
