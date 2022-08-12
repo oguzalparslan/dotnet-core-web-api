@@ -22,9 +22,10 @@ namespace myApp.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var customers = await _service.GetAllAsync();
+            /*var customers = await _service.GetAllAsync();
             var customersDto = _mapper.Map<CustomerDto>(customers.ToList());
-            return CreateActionResult(CustomResponseDto<List<CustomerDto>>.Success(204));
+            return CreateActionResult(CustomResponseDto<List<CustomerDto>>.Success(204));*/
+            return Ok(null);
         }
 
     }
