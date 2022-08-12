@@ -2,11 +2,6 @@
 using myApp.Core.Repositories;
 using myApp.Core.Services;
 using myApp.Core.UnitOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace myApp.Service.Service
 {
