@@ -25,8 +25,7 @@ namespace myApp.Repository.Seeds
                     Address = "DenemeAdres",
                     Email = "DenemeEmail",
                     DeviceId = 1
-                }
-                );
+                });
         }
     }
 }
