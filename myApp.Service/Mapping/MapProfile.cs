@@ -12,6 +12,7 @@ namespace myApp.Service.Mapping
             CreateMap<ActiveWorks, ActiveWorksDto>().ReverseMap();
             CreateMap<Customer, CustomerDto>().ReverseMap();
             CreateMap<TechnicalService, TechnicalServiceDto>().ReverseMap();
+            CreateMap<CustomerUpdateDto, Customer>();
         }
     }
 }

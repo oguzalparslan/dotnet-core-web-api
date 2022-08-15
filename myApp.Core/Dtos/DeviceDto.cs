@@ -6,5 +6,9 @@
         public string Model { get; set; }
         public string SerialNumber { get; set; }
         public string ModelNumber { get; set; }
+
+        //Foreign Keys
+        public int CustomerId { get; set; }
+
     }
 }

@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using myApp.Core.Repositories;
 
-namespace myApp.Repository.Repositories
-{
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    namespace myApp.Repository.Repositories
     {
-        private readonly AppDbContext _context;
-        private readonly DbSet<T> _dbset;
+        public class GenericRepository<T> : IGenericRepository<T> where T : class
+        {
+            private readonly AppDbContext _context;
+            private readonly DbSet<T> _dbset;
         public GenericRepository(AppDbContext context)
         {
             _context = context;
@@ -19,7 +19,7 @@ namespace myApp.Repository.Repositories
             await _dbset.AddAsync(entity);
         }
 
-        public IQueryable<T> GetAllAsync()
+        public IQueryable<T> GetAll()
         {
             return _dbset.AsNoTracking().AsQueryable();
         }

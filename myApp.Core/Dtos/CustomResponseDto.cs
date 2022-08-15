@@ -14,7 +14,7 @@ namespace myApp.Core.Dtos
         [JsonIgnore]
         public int StatusCode { get; set; }
 
-        public ICollection<T> Errors { get; set; }
+        public ICollection<T>? Errors { get; set; }
 
 
         public static CustomResponseDto<T> Success(int statusCode)

@@ -8,7 +8,7 @@ namespace myApp.Core.Repositories
 {
     public interface IGenericRepository<T> where T : class
     {
-        IQueryable<T> GetAllAsync();
+        IQueryable<T> GetAll();
         Task<T> GetByIdAsync(int id);
         Task AddAsync(T entity);
         void Remove(T entity);

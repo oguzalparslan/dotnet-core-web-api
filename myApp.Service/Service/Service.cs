@@ -22,10 +22,9 @@ namespace myApp.Service.Service
             await unitOfWork.CommitAsync();
             return entity;
         }
-
-        public async Task<List<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await genericRepository.GetAllAsync().ToListAsync();
+            return await genericRepository.GetAll().ToListAsync();
         }
 
         public async Task<T> GetByIdAsync(int id)

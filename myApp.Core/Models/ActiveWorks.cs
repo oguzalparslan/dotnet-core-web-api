@@ -9,17 +9,17 @@ namespace myApp.Core.Models
     public class ActiveWorks : BaseEntity
     {
 
-        public DateTime Date { get; set; }
-        public string TrackingCode { get; set; }
-        public string Problem { get; set; }
-        
-        //Foreign Keys
-        public int CustomerId { get; set; }
-        public int DeviceId { get; set; }
-        public int TechnicalServiceId { get; set; }
-        
+            public string Date { get; set; }
+            public string TrackingCode { get; set; }
+            public string Problem { get; set; }
+
+            //Foreign Keys
+            public int CustomerId { get; set; }
+            public int DeviceId { get; set; }
+            public int TechnicalServiceId { get; set; }
+
         //Relationships
-        public TechnicalService TechnicalService { get; set; }  
+        public TechnicalService TechnicalService { get; set; }
 
     }
 }
