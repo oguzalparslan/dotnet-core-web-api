@@ -24,7 +24,9 @@ namespace myApp.Service.Service
         }
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await genericRepository.GetAll().ToListAsync();
+            var list = await genericRepository.GetAll().ToListAsync();
+
+            return list;
         }
 
         public async Task<T> GetByIdAsync(int id)

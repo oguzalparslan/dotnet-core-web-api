@@ -18,15 +18,19 @@ namespace myApp.API.Controllers
             _mapper = mapper;
         }
 
-
+        //api/Customer
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            var customers = await _service.GetAllAsync();
-            var customerDtos = _mapper.Map<List<CustomerDto>>(customers.ToList());
-            return CreateActionResult(CustomResponseDto<List<CustomerDto>>.Success(200, customerDtos));
+            return CreateActionResult(
+                CustomResponseDto<CustomerDto>.Success(
+                    200, _mapper.Map<CustomerDto>(
+                        await _service.GetAllAsync()
+                        )
+                    )
+                );
         }
-
+        //api/Customer/1
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
