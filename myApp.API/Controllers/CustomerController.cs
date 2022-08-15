@@ -7,8 +7,6 @@ using myApp.Core.Services;
 
 namespace myApp.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class CustomerController : CustomBaseController
     {
         private readonly IMapper _mapper;
@@ -24,9 +22,7 @@ namespace myApp.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var customers = await _service.GetAllAsync();
-            var customersDto = _mapper.Map<CustomerDto>(customers.ToListAsync());
-            return CreateActionResult(CustomResponseDto<List<CustomerDto>>.Success(204/*, customersDto*/));
+            return Ok(null);
         }
 
     }

@@ -2,11 +2,6 @@
 using myApp.Core.Repositories;
 using myApp.Core.Services;
 using myApp.Core.UnitOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace myApp.Service.Service
 {
@@ -28,7 +23,7 @@ namespace myApp.Service.Service
             return entity;
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<List<T>> GetAllAsync()
         {
             return await genericRepository.GetAllAsync().ToListAsync();
         }

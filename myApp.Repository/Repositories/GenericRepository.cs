@@ -3,11 +3,11 @@ using myApp.Core.Repositories;
 
 namespace myApp.Repository.Repositories
 {
-    public class Service<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly AppDbContext _context;
         private readonly DbSet<T> _dbset;
-        public Service(AppDbContext context)
+        public GenericRepository(AppDbContext context)
         {
             _context = context;
             _dbset = _context.Set<T>();

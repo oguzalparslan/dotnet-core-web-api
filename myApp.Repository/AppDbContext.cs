@@ -12,12 +12,13 @@ namespace myApp.Repository
         DbSet<ActiveWorks>? activeWorks { get; set; }
         DbSet<Device>? device { get; set; }
         DbSet<TechnicalService>? technicalService { get; set; }
+        //DbSet<TechnicalService>? technicalService { get; set; }
+        //DbSet<Customer> customer { get; set; }
 
 
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        }
     }
 }
