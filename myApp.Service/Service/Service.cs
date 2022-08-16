@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
 using myApp.Core.Repositories;
 using myApp.Core.Services;
 using myApp.Core.UnitOfWork;
@@ -24,9 +25,7 @@ namespace myApp.Service.Service
         }
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            var list = await genericRepository.GetAll().ToListAsync();
-
-            return list;
+            return await genericRepository.GetAll().ToListAsync();
         }
 
         public async Task<T> GetByIdAsync(int id)
@@ -41,7 +40,7 @@ namespace myApp.Service.Service
             await unitOfWork.CommitAsync();
         }
 
-        public async void UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
             genericRepository.Update(entity);
             await unitOfWork.CommitAsync();

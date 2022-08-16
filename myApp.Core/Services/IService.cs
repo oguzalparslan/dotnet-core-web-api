@@ -12,6 +12,6 @@ namespace myApp.Core.Services
         Task<T> GetByIdAsync(int id);
         Task<T> AddAsync(T entity);
         void RemoveAsync(T entity);
-        void UpdateAsync(T entity);
+        Task UpdateAsync(T entity);
     }
 }

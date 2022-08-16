@@ -13,7 +13,7 @@ namespace myApp.Repository.Seeds
     {
         public void Configure(EntityTypeBuilder<TechnicalService> builder)
         {
-            builder.HasData(
+            //builder.HasData(
                 /*
         public string BrandName { get; set; }
         public string PhoneNumber { get; set; }
@@ -23,18 +23,18 @@ namespace myApp.Repository.Seeds
         //Foreign Keys
         public int DeviceId { get; set; }
                 */
-                new TechnicalService
-                {
-                    Id = 1,
-                    MembershipDate = "15.08.2022",
-                    BrandName = "DenemeBrandName",
-                    PhoneNumber = "DenemePhoneNumber",
-                    Address = "DenemeAddress",
-                    Rating = 4.7f,
-                    Website = "DenemeWebsite",
-                    DeviceId = 1
-                }
-                );
+            //new TechnicalService
+            //{
+            //    Id = 1,
+            //    MembershipDate = "15.08.2022",
+            //    BrandName = "DenemeBrandName",
+            //    PhoneNumber = "DenemePhoneNumber",
+            //    Address = "DenemeAddress",
+            //    Rating = 4.7f,
+            //    Website = "DenemeWebsite",
+            //    DeviceId = 1
+            //}
+            //);
         }
     }
 }

@@ -9,6 +9,6 @@ namespace myApp.Core.Models
     public class BaseEntity
     {
         public int Id { get; set; }
-        public string MembershipDate { get; set; }
+        public DateTime MembershipDate { get; set; }
     }
 }

@@ -6,39 +6,38 @@ using myApp.Core.Repositories;
         public class GenericRepository<T> : IGenericRepository<T> where T : class
         {
             private readonly AppDbContext _context;
-            private readonly DbSet<T> _dbset;
+            private readonly DbSet<T> _dbSet;
         public GenericRepository(AppDbContext context)
         {
             _context = context;
-            _dbset = _context.Set<T>();
+            _dbSet = _context.Set<T>();
 
         }
 
         public async Task AddAsync(T entity)
         {
-            await _dbset.AddAsync(entity);
+            await _dbSet.AddAsync(entity);
         }
 
         public IQueryable<T> GetAll()
         {
-            return _dbset.AsNoTracking().AsQueryable();
+            return _dbSet.AsNoTracking().AsQueryable();
         }
 
         public async Task<T> GetByIdAsync(int id)
         {
-            var entity = await _dbset.FindAsync(id);
+            var entity = await _dbSet.FindAsync(id);
             return entity;
         }
 
         public void Remove(T entity)
         {
-            _dbset.Remove(entity);
+            _dbSet.Remove(entity);
         }
 
         public void Update(T entity)
         {
-            _dbset.Update(entity);
-
+            _dbSet.Update(entity);
         }
     }
 }

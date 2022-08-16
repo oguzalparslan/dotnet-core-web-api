@@ -14,8 +14,14 @@ namespace myApp.Repository.Configurations
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).UseIdentityColumn();
+            builder.Property(x => x.Id).UseIdentityColumn().IsRequired();
+            builder.Property(x => x.FirstName).IsRequired();
+            builder.Property(x => x.LastName).IsRequired();
+            builder.Property(x => x.PhoneNumber).IsRequired();
+            builder.Property(x => x.DeviceId).IsRequired();
+
             builder.ToTable("Customer");
+
         }
     }
 }

@@ -27,11 +27,13 @@ builder.Services.AddAutoMapper(typeof(MapProfile));
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
-    x.UseSqlServer(builder.Configuration.GetConnectionString("connectionString"), option =>
-    {
-        //option.MigrationsAssembly("myApp.Repository"); Tip Guvensiz
-        option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
-    });
+    x.UseSqlServer(builder.Configuration.GetConnectionString("connectionString")
+    //    , option =>{//option.MigrationsAssembly("myApp.Repository"); Tip Guvensiz
+    //    option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
+    //}
+        
+        
+        );
 });
 
 

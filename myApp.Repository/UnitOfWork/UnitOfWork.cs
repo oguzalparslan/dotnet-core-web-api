@@ -1,29 +1,28 @@
 ﻿using myApp.Core.UnitOfWork;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace myApp.Repository.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly AppDbContext _context;
 
-        public UnitOfWork(AppDbContext appDbContext)
+        public UnitOfWork(AppDbContext context)
         {
-            _appDbContext = appDbContext;
+            _context = context;
         }
 
         public void Commit()
         {
-            _appDbContext.SaveChanges();
+            _context.SaveChanges();
         }
 
         public async Task CommitAsync()
         {
-            await _appDbContext.SaveChangesAsync();
+            await Task.Run(() =>
+            {
+                _context.SaveChangesAsync();
+            });
         }
     }
 }

@@ -13,19 +13,19 @@ namespace myApp.Repository.Seeds
     {
         public void Configure(EntityTypeBuilder<ActiveWorks> builder)
         {
-            builder.HasData(
-                new ActiveWorks
-                {
-                    Id = 1,
-                    MembershipDate = "15.08.2022",
-                    Date = "15.08.2022",
-                    TrackingCode = "DenemeTrackingCode",
-                    Problem = "DenemeProblem",
-                    DeviceId = 1,
-                    CustomerId = 1,
-                    TechnicalServiceId = 1,
-                }
-                );
+            //builder.HasData(
+            //    new ActiveWorks
+            //    {
+            //        Id = 1,
+            //        MembershipDate 15.08.2022,
+            //        Date = "15.08.2022",
+            //        TrackingCode = "DenemeTrackingCode",
+            //        Problem = "DenemeProblem",
+            //        DeviceId = 1,
+            //        CustomerId = 1,
+            //        TechnicalServiceId = 1,
+            //    }
+            //    );
         }
     }
 }

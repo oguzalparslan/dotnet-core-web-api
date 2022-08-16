@@ -13,19 +13,19 @@ namespace myApp.Repository.Seeds
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            builder.HasData(
-                new Customer
-                {
-                    Id = 1,
-                    MembershipDate = "15-08-2022",
-                    FirstName = "Deneme",
-                    LastName = "Deneme2",
-                    NickName = "DenemeNickname",
-                    PhoneNumber = "DenemePhoneNumber",
-                    Address = "DenemeAdres",
-                    Email = "DenemeEmail",
-                    DeviceId = 1
-                });
+            //builder.HasData(
+            //    new Customer
+            //    {
+            //        Id = 1,
+            //        MembershipDate = "15-08-2022",
+            //        FirstName = "Deneme",
+            //        LastName = "Deneme2",
+            //        NickName = "DenemeNickname",
+            //        PhoneNumber = "DenemePhoneNumber",
+            //        Address = "DenemeAdres",
+            //        Email = "DenemeEmail",
+            //        DeviceId = 1
+            //    });
         }
     }
 }

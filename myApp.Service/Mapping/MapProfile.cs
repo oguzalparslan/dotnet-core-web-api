@@ -13,6 +13,7 @@ namespace myApp.Service.Mapping
             CreateMap<Customer, CustomerDto>().ReverseMap();
             CreateMap<TechnicalService, TechnicalServiceDto>().ReverseMap();
             CreateMap<CustomerUpdateDto, Customer>();
+            
         }
     }
 }
