@@ -39,7 +39,7 @@ builder.Services.AddDbContext<AppDbContext>(x =>
 });
 
 
-var app = builder.Build(); //Throw System.ArgumentException
+var app = builder.Build(); 
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
