@@ -9,17 +9,17 @@ namespace myApp.Repository
     {
         protected readonly IConfiguration Configuration;
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        { 
-        
+        {
+
         }
         DbSet<ActiveWorks> ActiveWorks { get; set; }
         DbSet<Device> Devices { get; set; }
         DbSet<TechnicalService> TechnicalServices { get; set; }
         DbSet<Customer> Customers { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        }
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        //}
     }
 }
